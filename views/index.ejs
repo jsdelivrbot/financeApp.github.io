@@ -1,0 +1,83 @@
+<% include partials/header %>
+<style>
+        form {
+        display: grid;
+        padding: 1em;
+        background: #f9f9f9;
+        border: 1px solid #c1c1c1;
+        margin: 2rem auto 0 auto;
+        max-width: 600px;
+        padding: 1em;
+      }
+      form input {
+        background: #fff;
+        border: 1px solid #9c9c9c;
+      }
+      form button {
+        background: lightgrey;
+        padding: 0.7em;
+        width: 100%;
+        border: 0;
+      }
+      form button:hover {
+        background: gold;
+      }
+      
+      label {
+        padding: 0.5em 0.5em 0.5em 0;
+        font-family: Arial, Helvetica, sans-serif
+      }
+      
+      input {
+        padding: 0.7em;
+        margin-bottom: 0.5rem;
+      }
+      input:focus {
+        outline: 3px solid gold;
+      }
+      
+      @media (min-width: 400px) {
+        form {
+          grid-template-columns: 200px 1fr;
+          grid-gap: 16px;
+        }
+      
+        label {
+          text-align: right;
+          grid-column: 1 / 2;
+        }
+      
+        input,
+        button {
+          grid-column: 2 / 3;
+        }
+      }
+      </style>
+</head>
+<body>
+    <form class="form1" action="/total" method="POST">
+        <label for="weekly-income" class="weeklyIncome">Weekly Income</label>
+        <input id="weekly-income" type="number" step=".01" name="weeklyIncome" required>
+
+        <label for="rent" class="rent">Rent:</label>
+        <input id="rent" type="number" step=".01" name="rent" value="550.00" required>
+
+        <label for="spectrum" class="spectrum">Spectrum:</label>
+        <input id="spectrum" type="number" step=".01" name="spectrum" value="70.00" required>
+
+        <label for="food" class="food">Food</label>
+        <input id="food" type="number" step=".01" name="food" value="200.00" required>
+
+        <label for="dte">DTE:</label>
+        <input id="dte" type="number" step=".01" name="dte" required>
+
+        <label for="we">WE:</label>
+        <input id="we" type="number" step=".01" name="we" required>
+
+        <label for="studentLoan">Student Loans:</label>
+        <input id="studentLoan" type="number" step=".01" name="studentLoan" required>
+
+        <input type="submit" value="calculate">
+    </form>
+
+<% include partials/footer %>

@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+<style>
+#main {
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+    <div id="main">
+        <h1>Your bills this month total to: 
+            $<%= rent + spectrum + food + dte + we + studentLoan %>
+        </h1>
+        <br>
+        <h1>Your monthly income is: 
+            $<%= income * 4 %>
+        </h1>
+
+        <h1>Income after expenses: 
+            $<%= Math.floor((income * 4) - rent - spectrum - food - dte - we - studentLoan) %>
+        </h1>
+
+        <button><a href="/">Home</a></button>
+    </div>
+
+
+<% include partials/footer %>
