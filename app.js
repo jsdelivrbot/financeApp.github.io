@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+const PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -28,6 +29,4 @@ app.post('/total', (req, res) => {
     })});
 
 
-app.listen(8080, function() {
-    console.log("server started on port 5000");
-});
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
